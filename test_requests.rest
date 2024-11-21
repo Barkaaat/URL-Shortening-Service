@@ -1,0 +1,82 @@
+# use REST Client VSCode extension OR Postman
+
+##################################### get APIs -- return all urls
+GET http://localhost:3001
+
+##################################### post APIs -- add new url
+### valid request
+POST http://localhost:3001/shorten
+Content-Type: application/json
+
+{
+  "url": "https://www.example.com/some/long/23sf"
+}
+
+### valid request
+POST http://localhost:3001/shorten
+Content-Type: application/json
+
+{
+  "url": "https://www.example.com/some/45/qrew"
+}
+
+### invalid request
+POST http://localhost:3001/shorten
+
+##################################### get APIs -- return url by short code
+### valid request
+GET http://localhost:3001/shorten/httpsfvlh7
+
+### valid request
+GET http://localhost:3001/shorten/httpshs009
+
+### invalid request
+GET http://localhost:3001/shorten/x
+
+##################################### put APIs -- update url by short code
+### valid request
+PUT http://localhost:3001/shorten/httpsh63m6
+Content-Type: application/json
+
+{
+  "url": "https://www.example.com/some/45/fsafs"
+}
+
+### valid request
+PUT http://localhost:3001/shorten/httpskodxo
+Content-Type: application/json
+
+{
+  "url": "https://www.example.com/some/45/tr"
+}
+
+### invalid request
+PUT http://localhost:3001/shorten/x
+Content-Type: application/json
+
+{
+  "url": "https://www.example.com/some/45/fsafs"
+}
+
+### invalid request
+PUT http://localhost:3001/shorten/x
+
+##################################### delete APIs -- delete url by short code
+### valid request
+DELETE http://localhost:3001/shorten/httpsbe30d
+
+### valid request
+DELETE http://localhost:3001/shorten/httpsdn0a5
+
+### invalid request
+DELETE http://localhost:3001/shorten/x
+
+##################################### get APIs -- return url status by short code
+### valid request
+GET http://localhost:3001/shorten/httpso7609/stats
+
+### valid request
+GET http://localhost:3001/shorten/https67s3e/stats
+
+### valid request
+GET http://localhost:3001/shorten/x/stats
